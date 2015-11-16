@@ -5,10 +5,14 @@
 		"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-	<package name="default" extends="struts-default">
+	<package name="ajax" namespace="/" extends="struts-default">
+		<result-types>
+			<result-type name="json" class="org.apache.struts2.json.JSONResult"></result-type>
+		</result-types>
 		<action name="login" class="com.zjj.action.login">
-			<result name="success">success.jsp</result>
-			<result name="fail">fail.jsp</result>
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
 		</action>
 	</package>
 </struts>
