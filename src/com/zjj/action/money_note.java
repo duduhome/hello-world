@@ -9,10 +9,29 @@ import java.text.DecimalFormat;
 public class money_note {
     private int id;
     private String addtime;
-    private String outputtime;
+    private String paytime;
+    private String content;
     private float amount;
-    private String payType;
+    private int payType;
     private int isDelete;
+    private String begintime;
+    private String endtime;
+
+    public String getBegintime() {
+        return begintime;
+    }
+
+    public void setBegintime(String begintime) {
+        this.begintime = begintime;
+    }
+
+    public String getEndtime() {
+        return endtime;
+    }
+
+    public void setEndtime(String endtime) {
+        this.endtime = endtime;
+    }
 
     public int getId() {
         return id;
@@ -30,12 +49,20 @@ public class money_note {
         this.addtime = addtime;
     }
 
-    public String getOutputtime() {
-        return outputtime;
+    public String getPaytime() {
+        return paytime;
     }
 
-    public void setOutputtime(String outputtime) {
-        this.outputtime = outputtime;
+    public void setPaytime(String paytime) {
+        this.paytime = paytime;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public float getAmount() {
@@ -46,11 +73,11 @@ public class money_note {
         this.amount = amount;
     }
 
-    public String getPayType() {
+    public int getPayType() {
         return payType;
     }
 
-    public void setPayType(String payType) {
+    public void setPayType(int payType) {
         this.payType = payType;
     }
 
@@ -67,9 +94,10 @@ public class money_note {
         return "money_note{" +
                 "id=" + id +
                 ", addtime='" + addtime + '\'' +
-                ", outputtime='" + outputtime + '\'' +
+                ", paytime='" + paytime + '\'' +
+                ", content='" + content + '\'' +
                 ", amount=" + amount +
-                ", payType='" + payType + '\'' +
+                ", payType=" + payType +
                 ", isDelete=" + isDelete +
                 '}';
     }

@@ -16,4 +16,11 @@
 	        resultType="com.zjj.action.money_note">
 		select * from money_note where id=#{id}
 	</select>
+	<insert id="add" parameterType="com.zjj.action.money_note">
+		INSERT INTO Money_Note(addtime,UpdateTime,content,paytime,payType,amount) VALUES (now(),now(),#{content},#{paytime},#{payType},#{amount})
+	</insert>
+	<select id="sel_all" parameterType="com.zjj.action.money_note">
+		SELECT * FROM money_note where #{endtime}>paytime and paytime>#{begintime}
+	</select>
+
 </mapper>
